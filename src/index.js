@@ -1,17 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './components/app/app';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// class WhoAmI extends Component {
+//     constructor(props) {
+//         super();
+//         this.state = {
+//             age: 21
+//         }
+//     }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//     newAge = () => {
+//         this.setState(state => ({
+//            age: ++state.age
+//         }))
+//     }
+
+//     render() {
+//         const {name, surname} = this.props;
+//         return (
+//             <div>
+//                 <h2>My name is {name}, surname - {surname}, age - {this.state.age}</h2>
+//                 <button onClick={this.newAge} >+</button>
+//             </div>
+
+//         )
+//     }
+// }
+
+// const All = () => {
+//     return (
+//         <div>
+//         <WhoAmI name="Ivan" surname="Petr"/>
+//         <WhoAmI name="John" surname="Smith"/>
+//         <WhoAmI name="Oleg" surname="Syhyda"/>
+//         </div>
+//     )
+// }
+
+
+ReactDOM.render( <App/> , document.getElementById('root'));
