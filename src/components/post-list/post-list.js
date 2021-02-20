@@ -3,8 +3,8 @@ import PostListItem from '../post-list-item/post-list-item';
 import './post-list.css';
 
 const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => {
-const a = '4'; 
-console.log(a)
+const a  4;
+
     const elements = posts.map((item) => {
         return (
             <li key={item.id} className='list-group-item'>
