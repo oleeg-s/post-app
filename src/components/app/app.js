@@ -5,6 +5,7 @@ import SearchPanel from '../search-panel/search-panel';
 import PostStatusFilter from '../post-status-filter/post-status-filter';
 import PostList from '../post-list/post-list';
 import PostAddForm from '../post-add-form/post-add-form';
+// import Example from '../test-comp/test-comp';
 
 import './app.css';
 
@@ -22,6 +23,7 @@ export default class App extends Component  {
         }
         this.maxId = 4
     }
+
 
     deleteItem = (id) => {
         this.setState(({data}) => {
@@ -81,8 +83,8 @@ export default class App extends Component  {
         if (term.length === 0) {
             return items
         }
-
-        return items.filter(item => item.label.indexOf(term) > -1);
+        
+        return items.filter(item => item.label.toLowerCase().indexOf(term) > -1);
     }
 
     filterPosts = (items, filter) => {
@@ -104,11 +106,13 @@ export default class App extends Component  {
     }
 
     render() {
+
         const {data, term, filter} = this.state
         const postsAmount = data.length
         const liked = data.filter(item => item.like).length
-
-        const visiblePosts = this.filterPosts(this.searchPosts(data, term), filter);
+        // console.log(data)
+        console.log(this.maxId)
+        const visiblePosts = this.filterPosts(this.searchPosts(data, term.toLowerCase()), filter);
 
         return (
             <div className="app">
@@ -131,6 +135,7 @@ export default class App extends Component  {
                     onToggleLiked={this.onToggleLiked}/>
                 <PostAddForm
                     onAdd={this.addItem}/>
+                {/* <Example/> */}
             </div>
         )
     }

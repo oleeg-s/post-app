@@ -3,7 +3,8 @@ import PostListItem from '../post-list-item/post-list-item';
 import './post-list.css';
 
 const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => {
-
+const a = '4'; 
+console.log(a)
     const elements = posts.map((item) => {
         return (
             <li key={item.id} className='list-group-item'>
@@ -15,14 +16,14 @@ const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => {
                     onToggleImportant={() => onToggleImportant(item.id)}
                     onToggleLiked={() => onToggleLiked(item.id)}/>
             </li>
-        )
-    })
+        );
+    });
 
     return (
         <ul className="app-list list-group">
             {elements}
         </ul>
-    )
-}
+    );
+};
 
-export default PostList
+export default PostList;
